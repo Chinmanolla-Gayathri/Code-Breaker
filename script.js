@@ -75,6 +75,10 @@ function startActualTest() {
 
 function finish() {
     showScreen('result-screen');
+    const total = stats.correct + stats.wrong;
+    const accuracy = ((stats.correct / total) * 100).toFixed(1);
+    const speed = (stats.correct / 1.5).toFixed(1); // trials per minute (90s = 1.5 min)
+    
     // Adjusted for the "Shuffled Grid" difficulty
 let category = "";
 if (speed > 45) category = "High (Superior)";
