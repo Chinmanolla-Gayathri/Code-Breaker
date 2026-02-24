@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Schizoeye DSST - Clinical Module</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <div id="setup-screen" class="screen">
+            <h1 class="logo">Schizo<span>eye</span></h1>
+            <p>Please enter the participant's age to begin.</p>
+            <input type="number" id="age-input" placeholder="Age (e.g. 19)" min="1" max="100">
+            <button class="btn-primary" onclick="startInstructions()">Continue</button>
+        </div>
+
+        <div id="instruction-screen" class="screen hidden">
+            <h2>Instruction Phase</h2>
+            <p>Match the center number to the symbol shown in the key at the top. Be as fast and accurate as possible.</p>
+            <div class="tip">We will start with 3 practice trials.</div>
+            <button class="btn-primary" onclick="startPractice()">Start Practice</button>
+        </div>
+
+        <div id="test-screen" class="screen hidden">
+            <div id="clinical-legend"></div>
+            <div class="target-zone">
+                <div id="target-digit">?</div>
+            </div>
+            <div id="response-grid"></div>
+            <div class="hud">
+                <div class="hud-item">Time: <span id="timer">90</span>s</div>
+                <div class="hud-item">Accuracy: <span id="accuracy-live">100</span>%</div>
+            </div>
+        </div>
+
+        <div id="result-screen" class="screen hidden">
+            <h2>Assessment Results</h2>
+            <div id="diagnostic-card">
+                </div>
+            <button class="btn-secondary" onclick="location.reload()">New Assessment</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
